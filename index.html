@@ -181,22 +181,56 @@
 
 <section class="section">
   <div class="container is-max-desktop">
-    <!-- Abstract. -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
         <h2 class="title is-3">The Key Idea: Cross-Model Alignment</h2>
+        
+        <!-- 본문 -->
         <div class="content has-text-justified">
           <p>
-            The key idea behind CMA involves two main components: 1) alignment between the image and text modalities of the ID data to effectively separate negative text embeddings, and 2) correspondence between matching ID image-text pairs to maintain ID accuracy.
+            The key idea behind CMA involves two main components: 
+            1) alignment between the image and text modalities of the ID data to effectively
+            separate negative text embeddings, and 
+            2) correspondence between matching ID image-text pairs to maintain ID accuracy.
           </p>
+        </div>
+        
+        <!-- 가운데 정렬된 수식 블록 -->
+        <div class="content has-text-centered" style="margin: 2rem 0;">
+          <!-- 2번째 이미지(수식) -->
+          <p>
+            \[
+              \mathcal{L}^k_{\text{imageCMA}} 
+                = -\log \sum_{j=1}^{B} \exp\Bigl(\frac{i_k \cdot t_j}{\tau}\Bigr),
+              \quad
+              \mathcal{L}^k_{\text{textCMA}}
+                = -\log \sum_{j=1}^{B} \exp\Bigl(\frac{i_j \cdot t_k}{\tau}\Bigr).
+            \]
+          </p>
+          <!-- 3번째 이미지(수식) -->
+          <p>
+            \[
+              \mathcal{L}_{CMA}
+                = \mathcal{L}_{CLIP}
+                  + \frac{\lambda}{2B}
+                    \sum_{k=1}^{B} 
+                    \Bigl(\mathcal{L}^k_{\text{imageCMA}} + \mathcal{L}^k_{\text{textCMA}}\Bigr).
+            \]
+          </p>
+        </div>
+
+        <!-- 아래에 이어지는 본문 -->
+        <div class="content has-text-justified">
+          <p>
+            For DiffCLIP, we apply this mechanism ...
+          </p>
+          <!-- 이하 필요한 내용 -->
         </div>
       </div>
     </div>
-    <!--/ Abstract. -->
-
   </div>
 </section>
-  
+
 
 <section class="section">
   <div class="container is-max-desktop">
