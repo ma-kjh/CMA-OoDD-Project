@@ -193,50 +193,56 @@
         <!-- 제목 -->
         <h2 class="title is-3">The Key Idea: Cross-Model Alignment</h2>
 
-        <!-- 3개의 이미지(좌우 배치) -->
-        <div class="columns">
-          <!-- 첫 번째 이미지 -->
-          <div class="column">
-            <figure class="box" style="padding: 1rem;">
+        <!-- figure: 세 개 이미지를 하나의 그룹으로 묶고, 공통 캡션 달기 -->
+        <figure class="box" style="padding: 1rem;">
+          <!-- 세 개의 이미지(좌우로 3열) -->
+          <div class="columns">
+            
+            <!-- 첫 번째 이미지 컬럼 -->
+            <div class="column">
               <img 
-                src="./static/images/ZS_fig.jpg" 
+                src="./static/images/figure1.jpg" 
                 alt="Figure 1" 
                 style="max-width: 100%; height: auto;"
               />
-              <figcaption class="has-text-centered" style="margin-top: 0.5rem;">
-                <small>ZS</small>
-              </figcaption>
-            </figure>
-          </div>
-
-          <!-- 두 번째 이미지 -->
-          <div class="column">
-            <figure class="box" style="padding: 1rem;">
+              <!-- 필요하다면, 각 이미지 아래에 짧은 부제목(소캡션)도 가능 -->
+              <p style="margin-top: 0.5rem;">
+                <small>Figure 1. ZS</small>
+              </p>
+            </div>
+            
+            <!-- 두 번째 이미지 컬럼 -->
+            <div class="column">
               <img 
-                src="./static/images/FLYP_fig.jpg" 
+                src="./static/images/figure2.jpg" 
                 alt="Figure 2" 
                 style="max-width: 100%; height: auto;"
               />
-              <figcaption class="has-text-centered" style="margin-top: 0.5rem;">
-                <small>FLYP</small>
-              </figcaption>
-            </figure>
-          </div>
-
-          <!-- 세 번째 이미지 -->
-          <div class="column">
-            <figure class="box" style="padding: 1rem;">
+              <p style="margin-top: 0.5rem;">
+                <small>Figure 2. FLYP</small>
+              </p>
+            </div>
+            
+            <!-- 세 번째 이미지 컬럼 -->
+            <div class="column">
               <img 
-                src="./static/images/CMA_fig.jpg" 
+                src="./static/images/figure3.jpg" 
                 alt="Figure 3" 
                 style="max-width: 100%; height: auto;"
               />
-              <figcaption class="has-text-centered" style="margin-top: 0.5rem;">
-                <small>CMA</small>
-              </figcaption>
-            </figure>
+              <p style="margin-top: 0.5rem;">
+                <small>Figure 3. CMA</small>
+              </p>
+            </div>
           </div>
-        </div>
+
+          <!-- 전체 그림 그룹에 대한 공통 캡션 -->
+          <figcaption class="has-text-centered" style="margin-top: 1rem;">
+            <small>
+              <strong>Above figures</strong> 세 개의 이미지를 묶은 공통 설명을 이곳에 작성할 수 있습니다.
+            </small>
+          </figcaption>
+        </figure>
         
         <!-- 일반 본문 -->
         <div class="content has-text-justified">
