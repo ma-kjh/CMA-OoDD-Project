@@ -205,7 +205,26 @@
 
         <!-- 수식을 중앙에 배치할 DIV -->
         <div class="content has-text-centered" style="margin: 2rem 0;">
-          <!-- 수식 영역: MathJax가 이 부분을 파싱하여 렌더링 -->
+          <!-- (1) CLIP 수식 -->
+          \[
+            \mathcal{L}_{CLIP}
+              = \frac{1}{2B}\sum_{k=1}^{B}
+                \Bigl(\mathcal{L}^k_{\text{image}} + \mathcal{L}^k_{\text{text}}\Bigr),
+          \]
+
+          \[
+            \mathcal{L}^k_{\text{image}}
+              = -\log
+                \frac{\exp\Bigl(\frac{i_k \cdot t_k}{\tau}\Bigr)}
+                      {\sum_{j=1}^{B} \exp\Bigl(\frac{i_k \cdot t_j}{\tau}\Bigr)},
+            \quad
+            \mathcal{L}^k_{\text{text}}
+              = -\log
+                \frac{\exp\Bigl(\frac{i_k \cdot t_k}{\tau}\Bigr)}
+                      {\sum_{j=1}^{B} \exp\Bigl(\frac{i_j \cdot t_k}{\tau}\Bigr)}.
+          \]
+
+          <!-- (2) CMA 수식 -->
           \[
             \mathcal{L}^k_{\text{imageCMA}}
               = -\log \sum_{j=1}^{B} \exp\Bigl(\frac{i_k \cdot t_j}{\tau}\Bigr),
@@ -222,6 +241,7 @@
                   \Bigl(\mathcal{L}^k_{\text{imageCMA}} + \mathcal{L}^k_{\text{textCMA}}\Bigr).
           \]
         </div>
+
       </div>
     </div>
   </div>
