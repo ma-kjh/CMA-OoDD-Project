@@ -249,22 +249,13 @@
         <!-- 일반 본문 -->
         <div class="content has-text-justified">
           <p>
-            The key idea behind CMA involves two main components: 
-            1) alignment between the image and text modalities of the ID data to effectively
-            separate negative text embeddings, and 
-            2) correspondence between matching ID image-text pairs to maintain ID accuracy. To implement these ideas, we employ a contrastive loss for each modality with an additional CMA regularization loss. 
+            CLIP uses a contrastive learning approach to learn multi-modal representations in a hyperspherical space by leveraging large-scale image and text data. Therefore, CLIP loss can be formulated as follows: 
           </p>
         </div>
 
         <!-- 수식을 중앙에 배치할 DIV -->
         <div class="content has-text-centered" style="margin: 2rem 0;">
           <!-- (1) CLIP 수식 -->
-          \[
-            \mathcal{L}_{CLIP}
-              = \frac{1}{2B}\sum_{k=1}^{B}
-                \Bigl(\mathcal{L}^k_{\text{image}} + \mathcal{L}^k_{\text{text}}\Bigr),
-          \]
-
           \[
             \mathcal{L}^k_{\text{image}}
               = -\log
@@ -274,8 +265,22 @@
             \mathcal{L}^k_{\text{text}}
               = -\log
                 \frac{\exp\Bigl(i_k \cdot t_k / {\tau}\Bigr)}
-                      {\sum_{j=1}^{B} \exp\Bigl(i_j \cdot t_k / {\tau}\Bigr)}.
+                      {\sum_{j=1}^{B} \exp\Bigl(i_j \cdot t_k / {\tau}\Bigr)},
           \]
+          
+          \[
+            \mathcal{L}_{CLIP}
+              = \frac{1}{2B}\sum_{k=1}^{B}
+                \Bigl(\mathcal{L}^k_{\text{image}} + \mathcal{L}^k_{\text{text}}\Bigr).
+          \]
+
+          <p>
+            The key idea behind CMA involves two main components: 
+            1) alignment between the image and text modalities of the ID data to effectively
+            separate negative text embeddings, and 
+            2) correspondence between matching ID image-text pairs to maintain ID accuracy.
+            To implement these ideas, we employ a contrastive loss for each modality with an additional CMA regularization loss. 
+          </p>
 
           <!-- (2) CMA 수식 -->
           \[
@@ -297,7 +302,8 @@
         
         <div class="content has-text-justified">
           <p>
-            To implement these ideas, we employ a contrastive loss for each modality with an additional CMA regularization loss. 
+            The proposed CMA losses work by globally increasing the similarity between ID image and text pairs, causing the ID modalities to be well-aligned on the hypersphere. 
+            As a result, the separability from the pretrained negative concepts can be enhanced, allowing for more effective OoDD.
           </p>
         </div>
       </div>
