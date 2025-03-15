@@ -269,21 +269,21 @@
             \mathcal{L}^k_{\text{image}}
               = -\log
                 \frac{\exp\Bigl(\frac{i_k \cdot t_k}{\tau}\Bigr)}
-                      {\sum_{j=1}^{B} \exp\Bigl(\frac{i_k \cdot t_j}{\tau}\Bigr)},
+                      {\sum_{j=1}^{B} \exp\Bigl(i_k \cdot t_j / {\tau}\Bigr)},
             \quad
             \mathcal{L}^k_{\text{text}}
               = -\log
                 \frac{\exp\Bigl(\frac{i_k \cdot t_k}{\tau}\Bigr)}
-                      {\sum_{j=1}^{B} \exp\Bigl(\frac{i_j \cdot t_k}{\tau}\Bigr)}.
+                      {\sum_{j=1}^{B} \exp\Bigl(i_j \cdot t_k / {\tau}\Bigr)}.
           \]
 
           <!-- (2) CMA 수식 -->
           \[
             \mathcal{L}^k_{\text{imageCMA}}
-              = -\log \sum_{j=1}^{B} \exp\Bigl(\frac{i_k \cdot t_j}{\tau}\Bigr),
+              = -\log \sum_{j=1}^{B} \exp\Bigl(i_k \cdot t_j / {\tau}\Bigr),
             \quad
             \mathcal{L}^k_{\text{textCMA}}
-              = -\log \sum_{j=1}^{B} \exp\Bigl(\frac{i_j \cdot t_k}{\tau}\Bigr).
+              = -\log \sum_{j=1}^{B} \exp\Bigl(i_j \cdot t_k /{ \tau}\Bigr).
           \]
 
           \[
