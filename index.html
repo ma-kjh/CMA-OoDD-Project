@@ -194,57 +194,6 @@
       <div class="column is-four-fifths">
         <!-- 제목 -->
         <h2 class="title is-3">The Key Idea: Cross-Model Alignment</h2>
-
-        <!-- figure: 세 개 이미지를 하나의 그룹으로 묶고, 공통 캡션 달기 -->
-        <figure class="box" style="padding: 1rem;">
-          <!-- 세 개의 이미지(좌우로 3열) -->
-          <div class="columns">
-            
-            <!-- 첫 번째 이미지 컬럼 -->
-            <div class="column">
-              <img 
-                src="./static/images/ZS_fig.jpg" 
-                alt="Figure 1" 
-                style="max-width: 100%; height: auto;"
-              />
-              <!-- 필요하다면, 각 이미지 아래에 짧은 부제목(소캡션)도 가능 -->
-              <p style="margin-top: 0.5rem;">
-                <small>Figure 1. ZS</small>
-              </p>
-            </div>
-            
-            <!-- 두 번째 이미지 컬럼 -->
-            <div class="column">
-              <img 
-                src="./static/images/FLYP_fig.jpg" 
-                alt="Figure 2" 
-                style="max-width: 100%; height: auto;"
-              />
-              <p style="margin-top: 0.5rem;">
-                <small>Figure 2. FLYP</small>
-              </p>
-            </div>
-            
-            <!-- 세 번째 이미지 컬럼 -->
-            <div class="column">
-              <img 
-                src="./static/images/CMA_fig.jpg" 
-                alt="Figure 3" 
-                style="max-width: 100%; height: auto;"
-              />
-              <p style="margin-top: 0.5rem;">
-                <small>Figure 3. CMA</small>
-              </p>
-            </div>
-          </div>
-
-          <!-- 전체 그림 그룹에 대한 공통 캡션 -->
-          <figcaption class="has-text-centered" style="margin-top: 1rem;">
-            <small>
-              The figures above illustrate the visualization of DOSNES <a href="https://arxiv.org/abs/1609.01977" target="_blank">[25]</a>  on the ImageNet-1k validation dataset and the MOS benchmark dataset. Blue and orange represent ID image and ID text embeddings, respectively, while green and red represent OoD image and OoD text embeddings.
-            </small>
-          </figcaption>
-        </figure>
         
         <!-- 일반 본문 -->
         <div class="content has-text-justified">
@@ -310,6 +259,58 @@
             As a result, the separability from the pretrained negative concepts can be enhanced, allowing for more effective OoDD.
           </p>
         </div>
+
+    
+        <!-- figure: 세 개 이미지를 하나의 그룹으로 묶고, 공통 캡션 달기 -->
+        <figure class="box" style="padding: 1rem;">
+          <!-- 세 개의 이미지(좌우로 3열) -->
+          <div class="columns">
+            
+            <!-- 첫 번째 이미지 컬럼 -->
+            <div class="column">
+              <img 
+                src="./static/images/ZS_fig.jpg" 
+                alt="Figure 1" 
+                style="max-width: 100%; height: auto;"
+              />
+              <!-- 필요하다면, 각 이미지 아래에 짧은 부제목(소캡션)도 가능 -->
+              <p style="margin-top: 0.5rem;">
+                <small>Figure 1. ZS</small>
+              </p>
+            </div>
+            
+            <!-- 두 번째 이미지 컬럼 -->
+            <div class="column">
+              <img 
+                src="./static/images/FLYP_fig.jpg" 
+                alt="Figure 2" 
+                style="max-width: 100%; height: auto;"
+              />
+              <p style="margin-top: 0.5rem;">
+                <small>Figure 2. FLYP</small>
+              </p>
+            </div>
+            
+            <!-- 세 번째 이미지 컬럼 -->
+            <div class="column">
+              <img 
+                src="./static/images/CMA_fig.jpg" 
+                alt="Figure 3" 
+                style="max-width: 100%; height: auto;"
+              />
+              <p style="margin-top: 0.5rem;">
+                <small>Figure 3. CMA</small>
+              </p>
+            </div>
+          </div>
+
+          <!-- 전체 그림 그룹에 대한 공통 캡션 -->
+          <figcaption class="has-text-centered" style="margin-top: 1rem;">
+            <small>
+              The figures above illustrate the visualization of DOSNES <a href="https://arxiv.org/abs/1609.01977" target="_blank">[25]</a>  on the ImageNet-1k validation dataset and the MOS benchmark dataset. Blue and orange represent ID image and ID text embeddings, respectively, while green and red represent OoD image and OoD text embeddings.
+            </small>
+          </figcaption>
+        </figure>
       </div>
     </div>
   </div>
