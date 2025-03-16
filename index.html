@@ -240,37 +240,15 @@
           <!-- 전체 그림 그룹에 대한 공통 캡션 -->
           <figcaption class="has-text-centered" style="margin-top: 1rem;">
             <small>
-              The figures above illustrate the visualization of DOSNES <a href="https://arxiv.org/abs/1609.01977" target="_blank">[25]</a>  on the ImageNet-1k validation dataset and the MOS benchmark dataset. Blue and orange represent ID image and ID text embeddings, respectively, while green and red represent OoD image and OoD text embeddings.
+              The figures above illustrate the visualization of <a href="https://arxiv.org/abs/1609.01977" target="_blank">DOSNES</a>  on the ImageNet-1k validation dataset and the MOS benchmark dataset. Blue and orange represent ID image and ID text embeddings, respectively, while green and red represent OoD image and OoD text embeddings.
             </small>
           </figcaption>
         </figure>
         <!-- 일반 본문 -->
         <div class="content has-text-justified">
           <p>
-            CLIP uses a contrastive learning approach to learn multi-modal representations in a hyperspherical space by leveraging large-scale image and text data. Therefore, CLIP loss can be formulated as follows: 
+            As shown in the figure, existing pre-trained image-text representations exhibit a modality gap, and simply applying the same CLIP-style fine-tuning does not resolve this issue. 
           </p>
-        </div>
-
-        <!-- 수식을 중앙에 배치할 DIV -->
-        <div class="content has-text-centered" style="margin: 2rem 0;">
-          <!-- (1) CLIP 수식 -->
-          \[
-            \mathcal{L}^k_{\text{image}}
-              = -\log
-                \frac{\exp\Bigl(i_k \cdot t_k / {\tau}\Bigr)}
-                      {\sum_{j=1}^{B} \exp\Bigl(i_k \cdot t_j / {\tau}\Bigr)},
-            \quad
-            \mathcal{L}^k_{\text{text}}
-              = -\log
-                \frac{\exp\Bigl(i_k \cdot t_k / {\tau}\Bigr)}
-                      {\sum_{j=1}^{B} \exp\Bigl(i_j \cdot t_k / {\tau}\Bigr)},
-          \]
-          
-          \[
-            \mathcal{L}_{CLIP}
-              = \frac{1}{2B}\sum_{k=1}^{B}
-                \Bigl(\mathcal{L}^k_{\text{image}} + \mathcal{L}^k_{\text{text}}\Bigr).
-          \]
         </div>
 
         <div class="content has-text-justified">
