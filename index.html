@@ -289,10 +289,18 @@
 
         <div class="box" style="margin-top: 2rem;">
           <h3 class="title is-5">Realtion to EBMs</h3>
-          <ul class="content has-text-left">
+          <ul class="content has-text-centered">
             <li>Blah</li>
             <li>Blah</li>
           </ul>
+          <div class="content has-text-centered" style="margin: 2rem 0;">
+            <!-- (2) EBM 수식 -->
+            \[
+              \max_\theta \mathbb{E}_p \left[ \log q_\theta(i,t) \right] &= 
+              \max_\theta \frac{1}{2} \mathbb{E}_p \left[ \log q_\theta(t|i) + \log q_\theta(i) \right] \notag \\
+              & + \frac{1}{2} \mathbb{E}_p \left[ \log q_\theta(i|t) + \log q_\theta(t) \right]
+            \]
+          </div>
         </div>
         
       </div>
