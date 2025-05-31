@@ -2,7 +2,7 @@
 
 This is the repository that contains source code for the [CMA-OoDD website](https://github.com/ma-kjh/CMA-OoDD).
 
-If you find Nerfies useful for your work please cite:
+If you find CMA useful for your work please cite:
 ```
 @article{kim2025enhanced,
   title={Enhanced OoD Detection through Cross-Modal Alignment of Multi-Modal Representations},
