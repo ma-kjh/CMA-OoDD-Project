@@ -295,23 +295,46 @@
           <h3 class="title is-5">Relation to EBMs</h3>
           <div class="content has-text-justified">
             <p>
-              The CMA objective is closely related to energy-based models (EBMs), where minimizing the loss corresponds to maximizing the log-likelihood of a joint distribution in hyperspherical space.
-            </p>
-            <p>
-              The joint distribution over image and text embeddings is defined as a Gibbs-Boltzmann distribution:
-              \( q_\theta(i, t) = \frac{\exp(-E_\theta(i, t)/\tau)}{Z(\theta)} \), where \( E_\theta(i, t) = - (i \cdot t) \).
-            </p>
-            <p>
-              The CMA objective further regulates the generative term using a hyperparameter \( \lambda \), allowing multi-modal adaptation within the EBM framework.
+              The proposed CMA objective is closely related to energy-based models (EBMs). Minimizing the CMA loss is equivalent to maximizing the log-likelihood of a joint distribution \( q_\theta(i, t) \) in a hyperspherical embedding space:
             </p>
           </div>
           
           <div class="content has-text-centered" style="margin: 2rem 0;">
             \[
-            \max_\theta \mathbb{E}_p \left[ \log q_\theta(i,t) \right] = 
+            \max_\theta \mathbb{E}_p \left[ \log q_\theta(i,t) \right] =
             \max_\theta \frac{1}{2} \mathbb{E}_p \left[ \log q_\theta(t|i) + \log q_\theta(i) \right] +
             \frac{1}{2} \mathbb{E}_p \left[ \log q_\theta(i|t) + \log q_\theta(t) \right]
             \]
+          </div>
+          
+          <div class="content has-text-justified">
+            <p>
+              In this formulation, the discriminative term \( \mathbb{E}_p[\log q_\theta(t|i)] \) corresponds to a contrastive loss, while the generative term \( \mathbb{E}_p[\log q_\theta(i)] \) involves marginal density estimation over image embeddings. The generative term can be written as:
+            </p>
+          </div>
+          
+          <div class="content has-text-centered" style="margin: 2rem 0;">
+            \[
+            \mathbb{E}_p[\log q_\theta(i)] = -\mathbb{E}_p[E_\theta(i)] - \log Z(\theta)
+            \]
+          </div>
+          
+          <div class="content has-text-justified">
+            <p>
+              Since \( Z(\theta) \) is intractable, the von Mises-Fisher (vMF) distribution is used to approximate \( q_\theta(i|t) \). The log marginal density becomes:
+            </p>
+          </div>
+          
+          <div class="content has-text-centered" style="margin: 2rem 0;">
+            \[
+            \log q_\theta(i) = \log \sum_{t \in B} \exp \left( -\frac{E_\theta(i,t)}{\tau} \right) + C
+            \]
+          </div>
+          
+          <div class="content has-text-justified">
+            <p>
+              where \( C = \log C_p(1/\tau) \) is a constant. Therefore, maximizing \( \log q_\theta(i) \) is equivalent to minimizing the generation-aware loss \( \mathcal{L}^{k}_{\text{image\_CMA}} \). While traditional contrastive losses only consider discriminative terms (i.e., \( \log q_\theta(t|i) \)), CMA integrates both discriminative and generative modeling for enhanced OoDD performance.
+            </p>
           </div>
         
       </div>
