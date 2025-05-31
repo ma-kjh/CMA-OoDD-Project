@@ -377,15 +377,14 @@
         <h2 class="title is-3">Conclusion</h2>
         <!-- 본문 -->
         <p>
-          We introduce cross-modal alignment (CMA), a novel multi-modal fine-tuning (MMFT) method 
-          that achieves state-of-the-art performance in both OoDD and ID accuracy.
+          In this paper, we introduce cross-modal alignment (CMA),a novel multi-modal fine-tuning (MMFT) method that achieves state-of-the-art performance in both OoDD and ID accuracy. We establish a theoretical connection between CMA and EBM by incorporating the generative term into contrastive learning. Our experimental results show how the CMA regularizer enhances the hyperspherical structure of the embedding space, reduces the modality gap, and strengthens alignment, leading to better OoD detection and ID classification. We plan to further explore the effectiveness of using auxiliary negative labels in MMFT training.
         </p>
         <div class="box" style="margin-top: 2rem;">
           <h3 class="title is-5">Key Contributions</h3>
           <ul class="content has-text-left">
-            <li>First integration of differential attention into CLIP-based VLMs.</li>
-            <li>Consistent gains over baseline CLIP with minimal overhead.</li>
-            <li>Detailed ablations highlighting improved zero-shot performance.</li>
+            <li>We introduce CMA, a novel MMFT method that aligns image-text embeddings on a hypersphere to improve ID and OoDD performance.</li>
+            <li>We demonstrate that minimizing our objective is equivalent to maximizing the log-likelihood of a joint EBM in hyperspherical space.</li>
+            <li>We achieve state-of-the-art results on MOS and OpenOOD v1.5 and provide an in-depth analysis of how hyperspherical alignment enhances OoDD.</li>
           </ul>
         </div>
       </div>
