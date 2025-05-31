@@ -369,25 +369,27 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 
   
-  <section class="section">
+<section class="section">
   <div class="container is-max-desktop">
     <div class="columns is-centered">
       <div class="column is-four-fifths has-text-centered">
         <!-- 제목 -->
         <h2 class="title is-3">Conclusion</h2>
 
-        <!-- 본문 가운데 정렬 -->
-        <p class="content" style="text-align: center;">
-          In this paper, we introduce cross-modal alignment (CMA), a novel multi-modal fine-tuning (MMFT) method that achieves state-of-the-art performance in both OoDD and ID accuracy.
-          We establish a theoretical connection between CMA and EBM by incorporating the generative term into contrastive learning.
-          Our experimental results show how the CMA regularizer enhances the hyperspherical structure of the embedding space, reduces the modality gap, and strengthens alignment, leading to better OoD detection and ID classification.
-          We plan to further explore the effectiveness of using auxiliary negative labels in MMFT training.
-        </p>
+        <!-- 본문: 양쪽 정렬로 자연스럽게 -->
+        <div class="content" style="text-align: justify;">
+          <p>
+            In this paper, we introduce cross-modal alignment (CMA), a novel multi-modal fine-tuning (MMFT) method that achieves state-of-the-art performance in both OoDD and ID accuracy.
+            We establish a theoretical connection between CMA and EBM by incorporating the generative term into contrastive learning.
+            Our experimental results show how the CMA regularizer enhances the hyperspherical structure of the embedding space, reduces the modality gap, and strengthens alignment, leading to better OoD detection and ID classification.
+            We plan to further explore the effectiveness of using auxiliary negative labels in MMFT training.
+          </p>
+        </div>
 
         <!-- Key Contributions -->
         <div class="box" style="margin-top: 2rem;">
           <h3 class="title is-5">Key Contributions</h3>
-          <ul class="content" style="text-align: center; list-style-position: inside;">
+          <ul class="content has-text-left" style="padding-left: 1.5rem;">
             <li>We introduce CMA, a novel MMFT method that aligns image–text embeddings on a hypersphere to improve ID and OoDD performance.</li>
             <li>We demonstrate that minimizing our objective is equivalent to maximizing the log-likelihood of a joint EBM in hyperspherical space.</li>
             <li>We achieve state-of-the-art results on MOS and OpenOOD v1.5 and provide an in-depth analysis of how hyperspherical alignment enhances OoDD.</li>
@@ -397,6 +399,7 @@
     </div>
   </div>
 </section>
+
 
 
 
