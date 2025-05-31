@@ -293,13 +293,26 @@
 
         
           <h3 class="title is-5">Relation to EBMs</h3>
-            <div class="content has-text-centered" style="margin: 2rem 0;">
-                \[
-                \max_\theta \mathbb{E}_p \left[ \log q_\theta(i,t) \right] &= 
-                \max_\theta \frac{1}{2} \mathbb{E}_p \left[ \log q_\theta(t|i) + \log q_\theta(i) \right] \notag \\
-                & + \frac{1}{2} \mathbb{E}_p \left[ \log q_\theta(i|t) + \log q_\theta(t) \right]
-                \]
-            </div>
+          <div class="content has-text-justified">
+            <p>
+              The CMA objective is closely related to energy-based models (EBMs), where minimizing the loss corresponds to maximizing the log-likelihood of a joint distribution in hyperspherical space.
+            </p>
+            <p>
+              The joint distribution over image and text embeddings is defined as a Gibbs-Boltzmann distribution:
+              \( q_\theta(i, t) = \frac{\exp(-E_\theta(i, t)/\tau)}{Z(\theta)} \), where \( E_\theta(i, t) = - (i \cdot t) \).
+            </p>
+            <p>
+              The CMA objective further regulates the generative term using a hyperparameter \( \lambda \), allowing multi-modal adaptation within the EBM framework.
+            </p>
+          </div>
+          
+          <div class="content has-text-centered" style="margin: 2rem 0;">
+            \[
+            \max_\theta \mathbb{E}_p \left[ \log q_\theta(i,t) \right] = 
+            \max_\theta \frac{1}{2} \mathbb{E}_p \left[ \log q_\theta(t|i) + \log q_\theta(i) \right] +
+            \frac{1}{2} \mathbb{E}_p \left[ \log q_\theta(i|t) + \log q_\theta(t) \right]
+            \]
+          </div>
         
       </div>
     </div>
