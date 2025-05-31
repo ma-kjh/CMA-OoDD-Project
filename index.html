@@ -322,10 +322,7 @@
           <div class="content has-text-justified">
             <p>
               The von Mises-Fisher (vMF) distribution is a probability distribution on the hypersphere in \( \mathbb{R}^p \) for the \( p \)-dimensional unit vectors. Given \( t \) be the mean direction of the vMF, the probability density function for the image embeddings is defined as
-              \( q_\theta(i|t) = C_p(1/\tau) \exp(-E_\theta(i,t)/\tau) \), where \( C_p(1/\tau) \) denotes the normalization factor.
-            </p>
-            <p>
-              Thus, the log marginal density of \( i \) and its empirical estimate can be written as:
+              \( q_\theta(i|t) = C_p(1/\tau) \exp(-E_\theta(i,t)/\tau) \), where \( C_p(1/\tau) \) denotes the normalization factor. Thus, the log marginal density of \( i \) and its empirical estimate can be written as:
             </p>
           </div>
           
@@ -333,13 +330,13 @@
             \[
             \log q_\theta(i) = \log \int_t q_\theta(i|t) q_\theta(t) \, dt 
             \approx \log \sum_{t \in B} q_\theta(i|t) 
-            \approx \log \sum_{t \in B} \exp \left( -\frac{E_\theta(i,t)}{\tau} \right) + C
+            \approx \log \sum_{t \in B} \exp \left( -E_\theta(i,t)/\tau \right) + C
             \]
           </div>
           
           <div class="content has-text-justified">
             <p>
-              where \( C = \log C_p(1/\tau) \) is a constant. Therefore, maximizing \( \log q_\theta(i) \) is equivalent to minimizing the generation-aware loss \( \mathcal{L}^{k}_{\text{image_{CMA}}} \). While traditional contrastive losses only consider discriminative terms (i.e., \( \log q_\theta(t|i) \)), CMA integrates both discriminative and generative modeling for enhanced OoDD performance.
+              where \( C = \log C_p(1/\tau) \) is a constant. Therefore, maximizing \( \log q_\theta(i) \) is equivalent to minimizing the generation-aware loss \( \mathcal{L}^{k}_{\text{image}_\text{CMA}} \). While traditional contrastive losses only consider discriminative terms (i.e., \( \log q_\theta(t|i) \)), CMA integrates both discriminative and generative modeling for enhanced OoDD performance.
             </p>
           </div>
         
@@ -357,14 +354,9 @@
         <h2 class="title is-3">Main Results</h2>
         <!-- 본문 -->
         <p>
-          Blah, Blah
+          Utilizing ImageNet-1k OoD benchmark datasets (e.g., MOS, OpenOODv1.5), we show that our method, combined with post-hoc OoDD approaches leveraging pretrained knowledge (e.g., NegLabel), significantly outperforms existing methods.
         </p>
-        <div class="box" style="margin-top: 2rem;">
-          <h3 class="title is-5">Blah</h3>
-          <ul class="content has-text-left">
-            <li>Blah</li>
-          </ul>
-        </div>
+        <img src="./static/images/teaser.jpg" alt="테저 이미지" style="max-width: 100%;">
       </div>
     </div>
   </div>
