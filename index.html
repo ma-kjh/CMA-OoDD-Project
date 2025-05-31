@@ -321,19 +321,25 @@
           
           <div class="content has-text-justified">
             <p>
-              Since \( Z(\theta) \) is intractable, the von Mises-Fisher (vMF) distribution is used to approximate \( q_\theta(i|t) \). The log marginal density becomes:
+              The von Mises-Fisher (vMF) distribution is a probability distribution on the hypersphere in \( \mathbb{R}^p \) for the \( p \)-dimensional unit vectors. Given \( t \) be the mean direction of the vMF, the probability density function for the image embeddings is defined as
+              \( q_\theta(i|t) = C_p(1/\tau) \exp(-E_\theta(i,t)/\tau) \), where \( C_p(1/\tau) \) denotes the normalization factor.
+            </p>
+            <p>
+              Thus, the log marginal density of \( i \) and its empirical estimate can be written as:
             </p>
           </div>
           
           <div class="content has-text-centered" style="margin: 2rem 0;">
             \[
-            \log q_\theta(i) = \log \sum_{t \in B} \exp \left( -\frac{E_\theta(i,t)}{\tau} \right) + C
+            \log q_\theta(i) = \log \int_t q_\theta(i|t) q_\theta(t) \, dt 
+            \approx \log \sum_{t \in B} q_\theta(i|t) 
+            \approx \log \sum_{t \in B} \exp \left( -\frac{E_\theta(i,t)}{\tau} \right) + C
             \]
           </div>
           
           <div class="content has-text-justified">
             <p>
-              where \( C = \log C_p(1/\tau) \) is a constant. Therefore, maximizing \( \log q_\theta(i) \) is equivalent to minimizing the generation-aware loss \( \mathcal{L}^{k}_{\text{image\_CMA}} \). While traditional contrastive losses only consider discriminative terms (i.e., \( \log q_\theta(t|i) \)), CMA integrates both discriminative and generative modeling for enhanced OoDD performance.
+              where \( C = \log C_p(1/\tau) \) is a constant. Therefore, maximizing \( \log q_\theta(i) \) is equivalent to minimizing the generation-aware loss \( \mathcal{L}^{k}_{\text{image_{CMA}}} \). While traditional contrastive losses only consider discriminative terms (i.e., \( \log q_\theta(t|i) \)), CMA integrates both discriminative and generative modeling for enhanced OoDD performance.
             </p>
           </div>
         
